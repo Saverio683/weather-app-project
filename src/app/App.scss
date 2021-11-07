@@ -1,0 +1,16 @@
+.app {
+    overflow-x: hidden;
+    color: #fff;
+
+    .title {
+        margin-bottom: 80px;
+        padding-left: 10px;
+    }    
+
+    .search-something {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        margin-top: 30vh;
+    }
+}
