@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { SpinnerContainer, SpinnerOverlay } from './loading-spinner.styles';
+import { SpinnerContainer, Spinner } from './loading-spinner.styles';
 
 const LoadingSpinner = () => (
-    <SpinnerOverlay>
-        <SpinnerContainer />
-    </SpinnerOverlay>
+    <SpinnerContainer>
+        <Spinner />
+    </SpinnerContainer>
 );
 
-export default LoadingSpinner;
+export default LoadingSpinner; 

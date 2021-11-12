@@ -1,0 +1,2 @@
+export const SET_CITY_FIELD = 'SET_CITY_FIELD';
+export const SET_COUNTRY_FIELD = 'SET_COUNTRY_FIELD';
