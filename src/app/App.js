@@ -8,8 +8,6 @@ import CurrentForecast from '../containers/current-forecast/current-forecast.con
 import DailyForecast from '../containers/daily-forecast/daily-forecast.container';
 import LoadingSpinner from '../components/loading-spinner/loading-spinner.component';
 
-console.log(process.env);
-
 const App = ({ loading, currentData, dailyData }) => ( 
   <div className='app'>
     <h4 className='title'>WEATHER APP</h4>
