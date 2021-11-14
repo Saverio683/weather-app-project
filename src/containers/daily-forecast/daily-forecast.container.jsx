@@ -12,7 +12,7 @@ const DailyForecast = ({ dailyData }) => (
         <Description>Daily forecast</Description>
         <DailyDataContainer>
             {
-                dailyData.map((x, i) => 
+                dailyData.slice(1).map((x, i) => 
                     <DailyData 
                         date={getDate(i)}
                         iconId={x.weather[0].icon}

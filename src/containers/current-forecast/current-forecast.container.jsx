@@ -8,39 +8,54 @@ import calculateTime from "./calculate-time.function";
 
 import { CurrentDataContainer, CurrentTime, LocationContainer, DataContainer } from './current-forecast.styles';
 
-const CurrentForecast = ({ currentData }) => (
-    <CurrentDataContainer>
-        <LocationContainer>
-            <span style={{'marginRight': '1vw'}}>
-                {currentData.name},
-            </span>
-            <span>
-                {currentData.sys.country}
-            </span>
-        </LocationContainer>
-        <CurrentTime>
-            At {calculateTime(currentData.dt)}
-        </CurrentTime>
-        <DataContainer>
-            <OverallData 
-                temperature={currentData.main.temp}
-                description={currentData.weather[0].description} 
-                iconId={currentData.weather[0].icon}
-            />
-            <Details 
-                tempMin={currentData.main.temp_min}
-                tempMax={currentData.main.temp_max}
-                humidity={currentData.main.humidity}
-                pressure={currentData.main.pressure}
-                windSpeed={currentData.wind.speed}
-                clouds={currentData.clouds.all}
-            />
-        </DataContainer>
-    </CurrentDataContainer>
-);
+import { 
+    selectCityName,
+    selectClouds,
+    selectCountryName,
+    selectTime,
+    selectWindSpeed,
+    selectMainData,
+    selectWeatherData
+} from '../../redux/weather-api-data/current-data.selectors';
+
+const CurrentForecast = ({ name, country, time, weatherData, mainData, windSpeed, clouds }) => {
+    const { description, icon } = weatherData;
+    const { temp, temp_min, temp_max, humidity, pressure } = mainData;
+    return (
+        <CurrentDataContainer>
+            <LocationContainer>
+                    {name}, {country}
+            </LocationContainer>
+            <CurrentTime>
+                At {calculateTime(time)}
+            </CurrentTime>
+            <DataContainer>
+                <OverallData 
+                    temperature={temp}
+                    description={description} 
+                    iconId={icon}
+                />
+                <Details 
+                    tempMin={temp_min}
+                    tempMax={temp_max}
+                    humidity={humidity}
+                    pressure={pressure}
+                    windSpeed={windSpeed}
+                    clouds={clouds}
+                />
+            </DataContainer>
+        </CurrentDataContainer>
+    )
+}
 
 const mapStateToProps = state => ({ 
-    currentData: state.data.currentData
+    name: selectCityName(state),
+    country: selectCountryName(state),
+    time: selectTime(state),
+    mainData: selectMainData(state),
+    weatherData: selectWeatherData(state),
+    windSpeed: selectWindSpeed(state),
+    clouds: selectClouds(state)
 })
 
 
