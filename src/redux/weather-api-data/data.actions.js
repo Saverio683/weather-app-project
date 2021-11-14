@@ -42,13 +42,13 @@ export const fetchDailyDataFailure = error => ({
 export const fetchData = (cityField, countryField) => {
     return (dispatch) => {
         dispatch(fetchCurrentDataRequest())
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityField},${countryField}&units=metric&appid=${REACT_APP_API_KEY}`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityField},${countryField}&units=metric&appid=17e57c3ab6fdc68fb851ae80c2f9c4b6`)
             .then(response => {
                 const currentData = response.data                
                 dispatch(fetchCurrentDataSuccess(currentData));
                 const { lat, lon } = currentData.coord                
                 dispatch(fetchDailyDataRequest())
-                axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=current,minutely,hourly,alerts&appid=${REACT_APP_API_KEY}`)
+                axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=current,minutely,hourly,alerts&appid=17e57c3ab6fdc68fb851ae80c2f9c4b6`)
                     .then(response => {
                         const dailyData = response.data.daily
                         dispatch(fetchDailyDataSuccess(dailyData))

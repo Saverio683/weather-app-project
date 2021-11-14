@@ -21,7 +21,7 @@ export const Image = styled.img`
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    justify-content: center;
 `;
 
 export const Temperature = styled.div`
