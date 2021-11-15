@@ -9,7 +9,7 @@ import {
     FETCH_DAILY_DATA_FAILURE
  } from './data.types';
 
-const { REACT_APP_API_KEY } = process.env;
+const { REACT_APP_API_KEY } = process.env; //insert here your API key
 
 export const fetchCurrentDataRequest = () => ({
     type: FETCH_CURRENT_DATA_REQUEST,
