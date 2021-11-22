@@ -1,3 +1,7 @@
+/* this reducer does not affect the Redux store because it is used in the useReducer hook
+I put this inside this "redux" folder,even if it might not be the most appropriate place, because 
+I didn't want to put everything inside the "search-field.component" file*/
+
 import {SET_CITY_FIELD, SET_COUNTRY_FIELD } from './search-field.types';
 
 export const INITIAL_STATE = {

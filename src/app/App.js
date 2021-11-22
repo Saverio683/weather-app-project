@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import './App.scss';
 
@@ -8,29 +8,29 @@ import CurrentForecast from '../containers/current-forecast/current-forecast.con
 import DailyForecast from '../containers/daily-forecast/daily-forecast.container';
 import LoadingSpinner from '../components/loading-spinner/loading-spinner.component';
 
-const App = ({ loading, currentData, dailyData }) => ( 
-  <div className='app'>
-    <h4 className='title'>WEATHER APP</h4>
-    <SearchField />
-    {
-      loading ?
-        <LoadingSpinner />
-      :        
-      currentData && dailyData ?
-        [
-          <CurrentForecast key='current-forecast-component' />,
-          <DailyForecast key='daily-forecast-component' />
-        ]
-      :  
-        <span className='search-something'>Please search something</span> 
-    }
-  </div>
-);
+const App = () => {
+  const isLoading = useSelector( state => state.data.loading);
+  const data = useSelector( state => state.data.dailyData); 
+  //if there will be the data of the daily forecast, surely there will also be those of the current
+  
+  return ( 
+    <div className='app'>
+      <h4 className='title'>WEATHER APP</h4>
+      <SearchField />
+      {
+        isLoading ?
+          <LoadingSpinner />
+        :        
+        data ? //if the request to the API was successful, then there will be data for the components that need them
+          [
+            <CurrentForecast key='current-forecast-component' />,
+            <DailyForecast key='daily-forecast-component' />
+          ]
+        :  
+          <span className='search-something'>Please search something</span> 
+      }
+    </div>
+  )
+}
 
-const mapStateToProps = state => ({ 
-  loading: state.data.loading,
-  currentData: state.data.currentData,
-  dailyData: state.data.dailyData
-})
-
-export default connect(mapStateToProps)(App);
+export default App;

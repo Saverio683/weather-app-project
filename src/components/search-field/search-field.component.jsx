@@ -10,6 +10,7 @@ import { SearchFieldContainer, SearchInput, OptionalField, FormComponent } from 
 const SearchField = () => {
     const dispatchData = useDispatch();
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+    //for the management of the search field states I preferred to use the useReducer and useDispatch hooks
     const { cityField, countryField } = state;
 
     const onFormSubmit = e => {

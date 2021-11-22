@@ -12,12 +12,13 @@ import {
     selectCityName,
     selectClouds,
     selectCountryName,
-    selectTime,
+    selectTime, 
     selectWindSpeed,
     selectMainData,
     selectWeatherData
 } from '../../redux/weather-api-data/current-data.selectors';
 
+//in this component I used selectors
 const CurrentForecast = ({ name, country, time, weatherData, mainData, windSpeed, clouds }) => {
     const { description, icon } = weatherData;
     const { temp, temp_min, temp_max, humidity, pressure } = mainData;
