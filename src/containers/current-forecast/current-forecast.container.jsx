@@ -1,8 +1,5 @@
-import React from "react";
+import React, { lazy } from "react";
 import { connect } from "react-redux";
-
-import OverallData from '../../components/overall-data/overall-data.component';
-import Details from '../../components/details/details.component';
 
 import calculateTime from "./calculate-time.function";
 
@@ -18,7 +15,9 @@ import {
     selectWeatherData
 } from '../../redux/weather-api-data/current-data.selectors';
 
-//in this component I used selectors
+const OverallData = lazy(() => import('../../components/overall-data/overall-data.component'));
+const Details = lazy(() => import('../../components/details/details.component'));
+
 const CurrentForecast = ({ name, country, time, weatherData, mainData, windSpeed, clouds }) => {
     const { description, icon } = weatherData;
     const { temp, temp_min, temp_max, humidity, pressure } = mainData;

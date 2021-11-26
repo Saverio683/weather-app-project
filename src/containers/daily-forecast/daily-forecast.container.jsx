@@ -1,11 +1,11 @@
-import React from "react";
+import React, { lazy } from "react";
 import { connect } from "react-redux";
-
-import DailyData from "../../components/daily-data/daily-data.component";
 
 import getDate from './get-date.function';
 
 import { DailyForecastContainer, DailyDataContainer, Description } from './daily-forecast.styles';
+
+const DailyData = lazy(() => import("../../components/daily-data/daily-data.component"));
 
 const DailyForecast = ({ dailyData }) => (
     <DailyForecastContainer>

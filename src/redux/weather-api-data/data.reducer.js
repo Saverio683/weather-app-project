@@ -24,9 +24,7 @@ const dataReducer = (state = INITIAL_STATE, action) => {
         case FETCH_CURRENT_DATA_SUCCESS:
             return {
                 ...state,
-                loading: false,
                 currentData: action.payload,
-                error: ''
             }
         case FETCH_CURRENT_DATA_FAILURE:
             return {
@@ -35,16 +33,12 @@ const dataReducer = (state = INITIAL_STATE, action) => {
                 error: action.payload
             }
         case FETCH_DAILY_DATA_REQUEST:
-            return {
-                ...state,
-                loading: true 
-            }
+            return state
         case FETCH_DAILY_DATA_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                dailyData: action.payload,
-                error: ''
+                dailyData: action.payload
             }
         case FETCH_DAILY_DATA_FAILURE: 
             return {
