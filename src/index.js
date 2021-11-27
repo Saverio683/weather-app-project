@@ -14,6 +14,4 @@ ReactDOM.render(
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')
-);
-
-export * from './redux/weather-api-data/data.actions';
+)
