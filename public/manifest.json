@@ -8,7 +8,7 @@
   "icons": [
     {
       "src": "./sun.png",
-      "sizes": "196x196",
+      "sizes": "512x512 196x196",
       "type": "image/png",
       "purpose": "any maskable"
     }
