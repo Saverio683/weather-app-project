@@ -1,5 +1,8 @@
-import React, { lazy } from "react";
+import React from "react";
 import { connect } from "react-redux";
+
+import OverallData from '../../components/overall-data/overall-data.component';
+import Details from '../../components/details/details.component';
 
 import calculateTime from "./calculate-time.function";
 
@@ -14,9 +17,6 @@ import {
     selectMainData,
     selectWeatherData
 } from '../../redux/weather-api-data/current-data.selectors';
-
-const OverallData = lazy(() => import('../../components/overall-data/overall-data.component'));
-const Details = lazy(() => import('../../components/details/details.component'));
 
 const CurrentForecast = ({ name, country, time, weatherData, mainData, windSpeed, clouds }) => {
     const { description, icon } = weatherData;

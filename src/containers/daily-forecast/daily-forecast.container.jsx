@@ -1,11 +1,12 @@
-import React, { lazy } from "react";
+import React from "react";
 import { connect } from "react-redux";
+
+import DailyData from '../../components/daily-data/daily-data.component';
 
 import getDate from './get-date.function';
 
 import { DailyForecastContainer, DailyDataContainer, Description } from './daily-forecast.styles';
 
-const DailyData = lazy(() => import("../../components/daily-data/daily-data.component"));
 
 const DailyForecast = ({ dailyData }) => (
     <DailyForecastContainer>
@@ -13,7 +14,7 @@ const DailyForecast = ({ dailyData }) => (
         <DailyDataContainer>
             { //dailyData is an array of 8 objects containing the today forecast + forecasts for the next 7 days
                 dailyData.slice(1).map((singleDay, i) => /*I used the slice method because the first object of the array contains today's 
-                forecast, which are not needed in this component*/
+                forecast, which is not needed in this component*/
                     <DailyData 
                         date={getDate(i)}
                         iconId={singleDay.weather[0].icon}
@@ -28,6 +29,6 @@ const DailyForecast = ({ dailyData }) => (
 
 const mapStateToProps = state => ({
  dailyData: state.data.dailyData
-}) 
+}); 
 
 export default connect(mapStateToProps)(DailyForecast);
