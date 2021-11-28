@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DailyForecastContainer = styled.div`
-    margin: 30px;
+    margin: 2vw;
 `;
 
 export const Description = styled.span`

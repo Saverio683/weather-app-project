@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const OverallDataContainer = styled.div`
     width: 500px;
     height: 200px;
-    margin-top: 4rem;
-    margin-left: 1rem;
+    margin-top: 3rem;
     display: flex;
     justify-content: center;    
 

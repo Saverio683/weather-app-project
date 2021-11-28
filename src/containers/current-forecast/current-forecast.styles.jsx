@@ -10,7 +10,7 @@ export const CurrentDataContainer = styled.div`
 `;
 
 export const LocationContainer = styled.div`
-    font-size: 60px;
+    font-size: 80px;
     @media only screen and (max-width: 950px) {
         display: flex;
         justify-content: center;
@@ -28,6 +28,7 @@ export const CurrentTime = styled.span`
 export const DataContainer  = styled.div`
     display: flex;
     width: 100%;
+    justify-content: space-around;
 
     @media only screen and (max-width: 950px) {
         flex-direction: column;
