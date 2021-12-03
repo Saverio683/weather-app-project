@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const SearchFieldContainer = styled.nav`
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     opacity: 0.8;

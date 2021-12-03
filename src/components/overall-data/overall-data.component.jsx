@@ -9,7 +9,7 @@ const OverallData = ({ temperature, description, iconId }) => (
         <Image src={getWeatherIcon(iconId)} alt='forecast-ico' />
         <Wrapper>
             <Temperature>
-                {Math.trunc(temperature)}°
+                {Math.trunc(temperature)}°C
             </Temperature>
             <Description>
                 {description}

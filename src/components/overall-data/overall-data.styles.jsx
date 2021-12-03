@@ -30,4 +30,5 @@ export const Temperature = styled.div`
 
 export const Description = styled.div`
     font-size: 20px;
+    text-align: center;
 `;

@@ -26,7 +26,7 @@ const Details = ({ tempMin, tempMax, humidity, pressure, windSpeed, clouds }) =>
                     Wind speed
                 </SingleElement>
                 <SingleElement>
-                    {windSpeed} km/h
+                    {Math.trunc(windSpeed)} km/h
                 </SingleElement>
             </Wrapper>            
         </Row>

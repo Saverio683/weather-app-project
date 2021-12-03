@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import { useDispatch } from 'react-redux';
+import { useNavigate, useLocation } from "react-router";
 
 import { SET_CITY_FIELD, SET_COUNTRY_FIELD } from '../../redux/search-field/search-field.types';
 import { reducer, INITIAL_STATE } from '../../redux/search-field/search-field.reducer';
@@ -8,18 +9,25 @@ import { fetchData } from '../../redux/weather-api-data/data.actions';
 import { SearchFieldContainer, SearchInput, OptionalField, FormComponent } from './search-field.styles';
 
 const SearchField = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const dispatchData = useDispatch();
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
     //for the management of the search field states I preferred to use the useReducer and useDispatch hooks
     const { cityField, countryField } = state;
 
     const onFormSubmit = e => {
-        e.preventDefault()
-        cityField.length < 1 ?
-          alert('Please insert a city')
-        :
-        dispatchData(fetchData(cityField, countryField));
-    }     
+        e.preventDefault();
+        if(cityField.length > 1) {
+            if(location.pathname !== '/') {
+                navigate('/', { replace: true })
+            }            
+            dispatchData(fetchData(cityField, countryField));            
+        } else {
+            alert('Please insert a city') 
+        }   
+    }      
 
     return (
         <SearchFieldContainer>

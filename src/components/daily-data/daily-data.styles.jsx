@@ -10,6 +10,11 @@ export const DailyDataContainer = styled.div`
     margin: 10px;
     padding: 10px;
 
+    &:hover {
+        cursor: pointer;
+        outline: 1px solid #FFEE00;
+    }
+
     @media only screen and (max-width: 950px) {
         display: inline-block;
     }
