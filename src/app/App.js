@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 import { AppContainer, RedirectComponent } from './app.styles';
 
@@ -13,8 +12,6 @@ const PageNotFound = lazy(() => import('../pages/page-not-found/page-not-found.c
 const MainPage = lazy(() => import('../pages/main-page/main-page.component'));
 const CurrentForecast = lazy(() => import('../components/current-forecast/current-forecast.component'));
 
-const history = createBrowserHistory();
-
 const App = () => ( 
   <AppContainer>
     <RedirectComponent to='/'>GO TO HOME PAGE</RedirectComponent>
@@ -22,7 +19,7 @@ const App = () => (
     <ErrorBoundary>
       <RefreshRoute>
         <Suspense fallback={<LoadingSpinner />}>
-          <Routes history={history}>        
+          <Routes>        
               <Route exact path='/' element={<MainPage />} />
               <Route exact path='/details/:detailsID' element={<CurrentForecast isMainPage={false} />} />            
               <Route exact path='*' element={<PageNotFound />} />            
