@@ -5,4 +5,8 @@ export const SearchSomething = styled.span`
     display: flex;
     justify-content: center;
     margin-top: 30vh;    
+
+    @media only screen and (max-width: 950px) {
+        font-size: 20px;
+    }
 `;

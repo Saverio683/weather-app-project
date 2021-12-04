@@ -15,6 +15,7 @@ export const DetailsContainer = styled.div`
         justify-content: center;
         margin: 0;
         width: 85%;
+        margin-bottom: 1rem;
     }
 `;
 
