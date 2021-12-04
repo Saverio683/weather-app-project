@@ -12,8 +12,10 @@ export const CurrentDataContainer = styled.div`
 export const LocationContainer = styled.div`
     font-size: 80px;
     @media only screen and (max-width: 950px) {
+        font-size: 60px;
         display: flex;
         justify-content: center;
+        white-space: wrap;
     }    
 `;
 
@@ -22,6 +24,10 @@ export const CurrentTime = styled.span`
     @media only screen and (max-width: 950px) {
         display: flex;
         justify-content: center;
+
+        &.details-page {
+            font-size: 20px;
+        }
     }
 `;
 

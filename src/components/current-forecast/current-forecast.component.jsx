@@ -50,14 +50,14 @@ const CurrentForecast = ({ isMainPage }) => {
             <LocationContainer>
                     {name}, {country}
             </LocationContainer>
-            <CurrentTime>
+            
             {
                 isMainPage ? 
-                    `At ${time}`
+                    <CurrentTime>At {time}</CurrentTime>
                 :
-                    `Forecast for ${time}`
+                    <CurrentTime className='details-page'>Forecast for {time}</CurrentTime>
             }                
-            </CurrentTime>
+            
             <DataContainer>
                 <OverallData 
                     temperature={temp}

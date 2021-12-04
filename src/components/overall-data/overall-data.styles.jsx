@@ -8,13 +8,16 @@ export const OverallDataContainer = styled.div`
     justify-content: center;    
 
     @media only screen and (max-width: 950px) {
-        margin-top: 2rem;
-        margin-left: 0;
+        margin-top: 1rem;
     }
 `;
 
 export const Image = styled.img`
     width: 170px;
+
+    @media only screen and (max-width: 950px) {
+        width: 150px;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -26,6 +29,10 @@ export const Wrapper = styled.div`
 export const Temperature = styled.div`
     font-size: 90px;
     display: flex;
+
+    @media only screen and (max-width: 950px) {
+        font-size: 70px;
+    }
 `;
 
 export const Description = styled.div`
