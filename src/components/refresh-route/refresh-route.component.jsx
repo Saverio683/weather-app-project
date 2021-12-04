@@ -7,10 +7,8 @@ const RefreshRoute = ({ children }) => {
 
   useEffect(() => {
     if (window.performance) {
-      if (performance.navigation.type === 1) {
-        if(location.pathname !== '/') {
-          navigate('/', { replace: true });
-        }         
+      if (performance.navigation.type === 1 && location.pathname !== '/') {
+          navigate('/', { replace: true })
       } 
     }
   }, []);
