@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { rgba } from 'polished';
 
 export const DailyDataContainer = styled.div`
-    background: ${rgba('#fff', 0.3)};;
+    background: ${rgba('#fff', 0.3)};
     border-radius: 10px;    
     width: 150px;
     display: block;
@@ -12,7 +12,7 @@ export const DailyDataContainer = styled.div`
 
     &:hover {
         cursor: pointer;
-        outline: 1px solid #FFEE00;
+        background: ${rgba('#fff', 0.5)};
     }
 
     @media only screen and (max-width: 950px) {

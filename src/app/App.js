@@ -20,9 +20,9 @@ const App = () => (
       <RefreshRoute>
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>        
-              <Route exact path='/' element={<MainPage />} />
-              <Route exact path='/details/:detailsID' element={<CurrentForecast isMainPage={false} />} />            
-              <Route exact path='*' element={<PageNotFound />} />            
+            <Route exact path='/' element={<MainPage />} />
+            <Route exact path='/details/:detailsID' element={<CurrentForecast isMainPage={false} />} />            
+            <Route exact path='*' element={<PageNotFound />} />            
           </Routes>        
         </Suspense>
       </RefreshRoute>
