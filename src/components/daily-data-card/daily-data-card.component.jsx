@@ -4,8 +4,8 @@ import { DailyDataContainer, DateContainer, ImageContainer, TemperatureContainer
 
 import getWeatherIcon from "../../icons/get-weather-ico.function";
 
-const DailyData = ({ date, iconId, temperature, func }, key) => (
-    <DailyDataContainer key={key} onClick={func}>
+const DailyDataCard = ({ date, iconId, temperature, onClickFunction }, key) => (
+    <DailyDataContainer key={key} onClick={onClickFunction}>
         <DateContainer>
             {date}
         </DateContainer>
@@ -16,4 +16,4 @@ const DailyData = ({ date, iconId, temperature, func }, key) => (
     </DailyDataContainer> 
 );
 
-export default DailyData;
+export default DailyDataCard;

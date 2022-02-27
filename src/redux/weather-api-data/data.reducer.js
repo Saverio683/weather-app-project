@@ -5,7 +5,7 @@ import {
     FETCH_DAILY_DATA_REQUEST,
     FETCH_DAILY_DATA_SUCCESS,
     FETCH_DAILY_DATA_FAILURE
- } from './data.types';
+} from './data.types';
 
 const INITIAL_STATE = {
     currentData: null,

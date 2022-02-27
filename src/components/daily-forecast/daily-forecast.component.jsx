@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router";
 
-import DailyData from '../../components/daily-data/daily-data.component';
+import DailyDataCard from '../daily-data-card/daily-data-card.component';
 
 import getDate from './get-date.function';
 
@@ -18,12 +18,12 @@ const DailyForecast = ({ dailyData }) => {
                 { //dailyData is an array of 8 objects containing the today forecast + forecasts for the next 7 days
                     dailyData.slice(1).map((singleDay, i) => /*I used the slice method because the first object of the array contains today's 
                     forecast, which is not needed in this component*/
-                        <DailyData 
+                        <DailyDataCard 
                             date={getDate(i)}
                             iconId={singleDay.weather[0].icon}
                             temperature={singleDay.temp.day}
                             key={i}
-                            func={() => navigate(`/details/${i+1}`, { replace: true })}
+                            onClickFunction={() => navigate(`/details/${i+1}`, { replace: true })}
                         />
                     )
                 }       

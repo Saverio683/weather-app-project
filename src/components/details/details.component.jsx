@@ -1,59 +1,59 @@
 import React from "react";
 
-import { DetailsContainer, Row, Wrapper, SingleElement } from './details.styles';
+import { DetailsContainer, Row, Wrapper, BoldElement, ThinElement } from './details.styles';
 
 const Details = ({ tempMin, tempMax, humidity, pressure, windSpeed, clouds }) => (
     <DetailsContainer>
         <Row>
             <Wrapper>
-                <SingleElement>
+                <BoldElement>
                     Temp min
-                </SingleElement>
-                <SingleElement>
+                </BoldElement>
+                <ThinElement>
                     {Math.trunc(tempMin)}°C
-                </SingleElement>
+                </ThinElement>
             </Wrapper>
-            <Wrapper>
-                <SingleElement>
+            <Wrapper> 
+                <BoldElement>
                     Humidity
-                </SingleElement>
-                <SingleElement>
+                </BoldElement>
+                <ThinElement>
                     {humidity}%
-                </SingleElement>
+                </ThinElement>
             </Wrapper>
             <Wrapper>
-                <SingleElement>
+                <BoldElement>
                     Wind speed
-                </SingleElement>
-                <SingleElement>
+                </BoldElement>
+                <ThinElement>
                     {Math.trunc(windSpeed)} km/h
-                </SingleElement>
+                </ThinElement>
             </Wrapper>            
         </Row>
         <Row>
             <Wrapper>
-                <SingleElement>
+                <BoldElement>
                     Temp max
-                </SingleElement>
-                <SingleElement>
+                </BoldElement>
+                <ThinElement>
                     {Math.trunc(tempMax)}°C
-                </SingleElement>
+                </ThinElement>
             </Wrapper>
             <Wrapper>
-                <SingleElement>
+                <BoldElement>
                     Pressure
-                </SingleElement>
-                <SingleElement>
+                </BoldElement>
+                <ThinElement>
                     {pressure} mb
-                </SingleElement>
+                </ThinElement>
             </Wrapper>
             <Wrapper>
-                <SingleElement>
+                <BoldElement>
                     Clouds
-                </SingleElement>
-                <SingleElement>
+                </BoldElement>
+                <ThinElement>
                     {clouds}%
-                </SingleElement>
+                </ThinElement>
             </Wrapper>                        
         </Row>
     </DetailsContainer>

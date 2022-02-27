@@ -33,6 +33,11 @@ export const Wrapper = styled.div`
     align-items: center;
 `;
 
-export const SingleElement = styled.div`
+export const ThinElement = styled.div`
     color: #000;
+`;
+
+export const BoldElement = styled.div`
+    color: #000;
+    font-weight: 500;
 `;

@@ -14,6 +14,7 @@ export const OverallDataContainer = styled.div`
 
 export const Image = styled.img`
     width: 170px;
+    cursor: pointer;
 
     @media only screen and (max-width: 950px) {
         width: 150px;
